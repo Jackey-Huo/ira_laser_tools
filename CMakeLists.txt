@@ -9,6 +9,9 @@ find_package(catkin REQUIRED COMPONENTS laser_geometry roscpp sensor_msgs std_ms
 find_package(Eigen3 REQUIRED)
 
 find_package(PCL REQUIRED)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march-native")
+set(CMAKE_CXX_FLAGS_DEBUG  "${CMAKE_CXX_FLAGS_DEBUG} -march=native")
 
 generate_dynamic_reconfigure_options(cfg/laserscan_multi_merger.cfg cfg/laserscan_virtualizer.cfg)
 
